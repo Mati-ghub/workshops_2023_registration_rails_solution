@@ -20,7 +20,7 @@ RSpec.describe TasksController, type: :controller do
 
     context "for task attributes given" do
       it 'renders new template' do
-        post :create, params: { task: { title: 'foo', description: 'bar' } }
+        post :create, params: { task: { title: 'foo', description: 'bar', dedline: Date.new(2023, 10, 1 ) } }
         expect(response).to redirect_to tasks_url
         expect(flash[:notice]).to be_present
       end
